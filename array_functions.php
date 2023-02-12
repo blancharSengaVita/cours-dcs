@@ -10,4 +10,3 @@ function filter(array $items, callable $fn):array
     }
 
     return $filteredItems;
-}
