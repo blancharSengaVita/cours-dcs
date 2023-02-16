@@ -1,7 +1,7 @@
 <?php
 require "array_functions.php";
 
-$author = isset($_GET["author"]) ? $_GET["author"] : "Albert Camus";
+$author = $_GET["author"]??"";
 
 //on essaie d'affecter à la variable auteur quelque chose qui existe pas
 //$author = $_GET["author"];

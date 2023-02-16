@@ -1,12 +1,13 @@
 <?php
 function filter(array $items, callable $fn):array
 {
-    $filteredItems = [];
+	$filteredItems = [];
 
-    foreach ($items as $item) {
-        if ($fn($item)) {
-            $filteredItems[] = $item;
-        }
-    }
+	foreach ($items as $item) {
+		if ($fn($item)) {
+			$filteredItems[] = $item;
+		}
+	}
 
-    return $filteredItems;
+	return $filteredItems;
+}
