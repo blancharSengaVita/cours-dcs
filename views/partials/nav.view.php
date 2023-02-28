@@ -80,11 +80,11 @@
 	<div class="md:hidden" id="mobile-menu">
 		<div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
 			<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-			<a href="/" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
+			<a href="/" class="<?= urlIs('/')?STYLES_CONFIG["nav-active"]:STYLES_CONFIG["nav-inactive"]  ?> block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
 
-			<a href="/about" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About</a>
+			<a href="/about" class="<?= urlIs('/about')?STYLES_CONFIG["nav-active"]:STYLES_CONFIG["nav-inactive"] ?>  block rounded-md px-3 py-2 text-base font-medium">About</a>
 
-			<a href="/contact" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Contact</a>
+			<a href="/contact" class="<?= urlIs('/contact')?STYLES_CONFIG["nav-active"]:STYLES_CONFIG["nav-inactive"] ?>  block rounded-md px-3 py-2 text-base font-medium">Contact</a>
 
 		</div>
 		<div class="border-t border-gray-700 pt-4 pb-3">
