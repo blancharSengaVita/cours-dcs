@@ -1,52 +1,40 @@
 <?php
+require "array_functions.php";
+
+$author = $_GET["author"]??"";
+
+//on essaie d'affecter à la variable auteur quelque chose qui existe pas
+//$author = $_GET["author"];
+
+
 $books = [
 		[
-				"title" => "L'étranger",
-				"author" => "Albert Camus"
+				"title" => "L’étranger",
+				"author" => "Albert Camus",
+				"release_date" => "1942"
 		],
 		[
 				"title" => "La peste",
-				"author" => "Albert Camus"
+				"author" => "Albert Camus",
+				"release_date" => "1947"
 		],
 		[
 				"title" => "La conjuration des imbéciles",
-				"author" => "John Kennedy Toole"
-		],
+				"author" => "John Kennedy Toole",
+				"release_date" => "1980"
+		]
 ];
 
+$filterByAuthor = function ($item) use($author):bool
+{
+	return $item["author"] === $author;
+};
 
-//$camusBooks = [];
-// foreach ($books as $book){
-//    if($book["author"] === "Albert Camus"){
-//        $camusBooks[] = $book;
-//    }
-//        }
-?>
-
-<html lang="fr">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title> cours1 </title>
-	<link rel="stylesheet" href="oui.css">
-</head>
-<body>
+$filteredBooksByAuthors = filter($books, $filterByAuthor);
 
 
+$authors = array_column($books, "author", "author");
 
-<?php foreach ($books as $book): ?>
-	<?php if ( $book["author"] === $_GET["author"]): ?>
-		<article>
-			<h2> <?php echo $book["title"] ?> </h2>
-			<p> ce livre a été écrit par <?= $_GET["author"]?></p>
-		</article>
-	<?php endif; ?>
-<?php endforeach; ?>
+//on demande la vue apres avoir fait toute ces opérations
+require "index.view.php";
 
-<a href="http://cours1.localhost/?author=John+Kennedy+Toole"> John Kennedy Toole</a>
-<a href="http://cours1.localhost/?author=Albert+Camus">Albert Camus</a>
-
-</body>
-</html>
