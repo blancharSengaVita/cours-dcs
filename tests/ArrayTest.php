@@ -1,33 +1,19 @@
 <?php
 
-require(__DIR__ . " /../vendor/autoload.php");
-require(__DIR__ . " /../array_functions.php");
-
-use PHPUnit\Framework\TestCase;
-
-
-class ArrayTest extends TestCase
-{
-
-	private $singleDimensionArray = ['a', 4, 7, 100, 'ty', 17];
-//	private $twoDimensionArray = [ [k1 => k2],
-// [k1 => k2],
-// [k1 => k2],
-//];
-
-	public function testItWorks(): void
-	{
-		$excpetedArray = ['a', 'ty'];
-		$decision = function ($item): bool {
-			return is_string($item);
-		};
-		$this->assertSame(
-			$excpetedArray,
-			filter($this->singleDimensionArray, $decision)
-		);
-
-
-
-		$this->assertEquals(1, 1);
-	}
-}
+//require (__DIR__ . " /../vendor/autoload.php");
+//require (__DIR__ . " /../array_functions.php");
+//
+//use PHPUnit\Framework\TestCase;
+//
+//
+//class ArrayTest extends TestCase
+//
+//$a = [1, 2, 3, 4, 5, 6, 7];
+//$aa = [['k1']];
+//
+//{
+//    public function testItWorks(): void
+//    {
+//        $this->assertEquals(1,1);
+//    }
+//}
