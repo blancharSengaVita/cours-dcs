@@ -1,17 +1,12 @@
 <?php
 
-define('STYLES', require "./config/styles.php");
 define('VIEWS_PATH', $_SERVER['DOCUMENT_ROOT'] . '/views');
-define('CONTROLLER_PATH', $_SERVER['DOCUMENT_ROOT'] . '/controllers');
-require "./utils/functions.php";
-require "./router.php";
-$uri = $_SERVER['REQUEST_URI'];
-$path = parse_url($uri, PHP_URL_PATH);
+define('CONTROLLERS_PATH', $_SERVER['DOCUMENT_ROOT'] . '/controllers');
+define('STYLES_CONFIG', require "./config/styles.php");
 
+require './utils/functions.php';
+
+$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+require './router.php';
 
 routeToController($path);
-
-
-
-
-//require CONTROLLER_PATH . "/{$controllers}";

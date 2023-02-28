@@ -1,12 +1,4 @@
 {
-    "name": "blanchar/cours1",
-    "type": "project",
-    "authors": [
-        {
-            "name": "blancharSengaVita",
-            "email": "blanchar.senga-vita@student.hepl.be"
-        }
-    ],
     "require-dev": {
         "phpunit/phpunit": "^10.0"
     }
