@@ -20,7 +20,7 @@
 <?php endif; ?>
 <nav>
 	<h2>Les auteurs</h2>
-	<?php foreach ($authors  $bookAuthor) : ?>
+	<?php foreach ($authors as $bookAuthor) : ?>
 		<a href="/?author=<?= $bookAuthor ?>"><?= $bookAuthor ?></a>
 	<?php endforeach ?>
 </nav>
